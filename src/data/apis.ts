@@ -469,57 +469,57 @@ export const apiDocs = [
               },
             ],
           },
-        },
-        errors: {
-          400: {
-            description: "Bad Request - Invalid Argument",
-            example: {
-              status: 400,
-              code: "INVALID_ARGUMENT",
-              message: "Invalid input",
+          errors: {
+            400: {
+              description: "Bad Request - Invalid Argument",
+              example: {
+                status: 400,
+                code: "INVALID_ARGUMENT",
+                message: "Invalid input",
+              },
             },
-          },
-          401: {
-            description: "Unauthorized - Authentication failed",
-            example: {
-              status: 401,
-              code: "UNAUTHENTICATED",
-              message:
-                "Request not authenticated due to missing, invalid, or expired credentials.",
+            401: {
+              description: "Unauthorized - Authentication failed",
+              example: {
+                status: 401,
+                code: "UNAUTHENTICATED",
+                message:
+                  "Request not authenticated due to missing, invalid, or expired credentials.",
+              },
             },
-          },
-          403: {
-            description: "Forbidden - Insufficient permissions",
-            example: {
-              status: 403,
-              code: "PERMISSION_DENIED",
-              message:
-                "Client does not have sufficient permissions to perform this action.",
+            403: {
+              description: "Forbidden - Insufficient permissions",
+              example: {
+                status: 403,
+                code: "PERMISSION_DENIED",
+                message:
+                  "Client does not have sufficient permissions to perform this action.",
+              },
             },
-          },
-          404: {
-            description: "Not Found - Device ID not found",
-            example: {
-              status: 404,
-              code: "NOT_FOUND",
-              message: "The specified resource is not found.",
+            404: {
+              description: "Not Found - Device ID not found",
+              example: {
+                status: 404,
+                code: "NOT_FOUND",
+                message: "The specified resource is not found.",
+              },
             },
-          },
-          422: {
-            description: "Unprocessable Entity - Unsupported Request",
-            example: {
-              status: 422,
-              code: "POPULATION_DENSITY_DATA.UNSUPPORTED_REQUEST",
-              message:
-                "Indicated combination of area, time interval and precision is too big",
+            422: {
+              description: "Unprocessable Entity - Unsupported Request",
+              example: {
+                status: 422,
+                code: "POPULATION_DENSITY_DATA.UNSUPPORTED_REQUEST",
+                message:
+                  "Indicated combination of area, time interval and precision is too big",
+              },
             },
-          },
-          429: {
-            description: "Too Many Requests - Rate limit exceeded",
-            example: {
-              status: 429,
-              code: "QUOTA_EXCEEDED",
-              message: "Out of resource quota.",
+            429: {
+              description: "Too Many Requests - Rate limit exceeded",
+              example: {
+                status: 429,
+                code: "QUOTA_EXCEEDED",
+                message: "Out of resource quota.",
+              },
             },
           },
         },
