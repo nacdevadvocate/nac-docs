@@ -48,23 +48,27 @@ const ApiDocPage = () => {
   };
 
   return (
-    <div className="flex bg-gray-100">
-      <div className="w-64 fixed left-0 top-0 h-full bg-white shadow-md">
+    <div className="flex flex-col md:flex-row bg-gray-100 min-h-screen">
+      {/* Sidebar */}
+      <div className="w-full md:w-64 fixed md:sticky top-0 left-0 h-screen md:h-auto bg-white shadow-md z-20">
         <Sidebar />
       </div>
 
-      <div className="p-8 flex-1 max-w-3xl mx-auto bg-white shadow-md rounded-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+      {/* Main Content */}
+      <div className="p-6 md:p-8 flex-1 max-w-3xl mx-auto bg-white shadow-md rounded-lg mt-16 md:mt-0">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 flex items-center gap-2">
           <FileText className="text-blue-600" /> {apiDetail.title}
         </h1>
-        <p className="text-gray-600 text-lg mb-6">{apiDetail.description}</p>
+        <p className="text-gray-600 text-base md:text-lg mb-6">
+          {apiDetail.description}
+        </p>
 
         {/* Endpoint Section */}
         <div className="mb-4 p-4 border-l-4 border-blue-500 bg-blue-50 rounded">
           <h3 className="font-semibold text-blue-700 flex items-center gap-2">
             <Database /> Endpoint:
           </h3>
-          <code className="text-blue-900 font-mono bg-blue-200 px-3 py-1 rounded block mt-1">
+          <code className="text-blue-900 font-mono bg-blue-200 px-3 py-1 rounded block mt-1 break-all">
             {apiDetail.endpoint}
           </code>
         </div>
@@ -73,7 +77,7 @@ const ApiDocPage = () => {
         <div className="mb-4 flex items-center gap-3">
           <h3 className="font-semibold text-gray-700">Method:</h3>
           <span
-            className={`px-3 py-1 text-white font-semibold rounded ${
+            className={`px-3 py-1 text-white font-semibold rounded text-sm md:text-base ${
               apiDetail.method === "GET"
                 ? "bg-green-500"
                 : apiDetail.method === "POST"
@@ -116,8 +120,8 @@ const ApiDocPage = () => {
           <pre className="bg-gray-800 text-green-300 p-4 rounded text-sm mt-2 overflow-x-auto">
             {JSON.stringify(
               "success" in apiDetail.response
-                ? apiDetail.response.success // If success exists, use it
-                : apiDetail.response, // Otherwise, assume normal response format
+                ? apiDetail.response.success
+                : apiDetail.response,
               null,
               2
             )}
